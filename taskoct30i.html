@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="uname" id="" required placeholder="username">
+    <input type="email" name="uemail" id="" required placeholder="enter email">
+    <input type="password" name="upass" id="" placeholder="password">
+    <button onclick=register()>REGISTER</button>
+
+    <script>
+
+        userdata = {} //stringify and store in udata
+        function register() {
+            let name = document.getElementsByName("uname")[0].value
+            let email = document.getElementsByName("uemail")[0].value
+            let password = document.getElementsByName("upass")[0].value
+
+            userdata.name = name //storing value
+            userdata.email = email
+            userdata.password = password
+            console.log(userdata);
+
+            //aACESS AND STORE 
+            localStorage.setItem("details",JSON.stringify(userdata))
+            
+        }
+
+    </script>
+</body>
+
+</html>
